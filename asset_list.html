@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3 d-flex justify-content-center" href="index.html">MEMIONTEC</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 button-hamburger" id="sidebarToggle"
+            href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></div>
+        <!-- Navbar-->
+        <div class="d-flex">
+            <div class="d-flex align-items-center button-bell gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-bell-fill"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                </svg>
+                <div>
+                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                    class="bi bi-menu-button" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A1.5 1.5 0 0 1 1.5 0h8A1.5 1.5 0 0 1 11 1.5v2A1.5 1.5 0 0 1 9.5 5h-8A1.5 1.5 0 0 1 0 3.5zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5z" />
+                                    <path
+                                        d="m7.823 2.823-.396-.396A.25.25 0 0 1 7.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0M0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5" />
+                                </svg></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Setup</a></li>
+                                <li><a class="dropdown-item" href="#!">Assets Management</a></li>
+                                <li><a class="dropdown-item" href="#!">Inventory Management</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="users">
+                <div class="name-user">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                        </svg>
+                        Udin D. Gacor
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="d-flex align-items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#C0881B"
+                                    class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                </svg>
+                                Asset
+                            </div>
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="asset_list.html">Asset List</a>
+                                <a class="nav-link" href="transfer_list.html">Transfer List</a>
+                                <a class="nav-link" href="loan_list.html">Loan List</a>
+                                <a class="nav-link" href="disposal.html">Disposal</a>
+                                <a class="nav-link" href="maintenance.html">Maintenance</a>
+                            </nav>
+                        </div>
+                        <div class="d-flex align-items-centerjustify-content-start">
+                            <a class="nav-link w-100 gap-2" href="user_management.html">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#C0881B"
+                                        class="bi bi-people-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    User Management
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid p-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2 top-content">
+                                <div class="d-flex justify-content-center">
+                                    <h3 class="text-tittle">Memointec Indonesia - Notebook A</h3>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                    <div class="mr">
+                                        <h3 class="text-tittle">Available</h3>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-primary btn-transfer">Transfer</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-primary btn-loan">Loan</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gap-3">
+                                <div class="d-flex flex-column gap-3 col-md-2">
+                                    <div class="d-flex justify-content-center custom">
+                                        <img src="assets/img/laptop.svg" alt="" class="img-fluid custom-img-laptop">
+                                    </div>
+                                    <div class="d-flex justify-content-center custom">
+                                        <img src="assets/img/qr-code.svg" alt="" class="img-fluid custom-img-qrcode">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Asset ID</td>
+                                                    <td>0201040001</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Category</td>
+                                                    <td>Laptop</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Sub Category</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Manufacture</td>
+                                                    <td>ASUS</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Model</td>
+                                                    <td>Vivobook H5</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Serial Number</td>
+                                                    <td>12345678</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Part Number</td>
+                                                    <td>abc123</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Location</td>
+                                                    <td>Head Office</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Position</td>
+                                                    <td>HO Laptop Storage</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Person</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Condition</td>
+                                                    <td>Good</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Purchase Date</td>
+                                                    <td>01-01-2023</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Supplier</td>
+                                                    <td>Tecsolin</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">PO number</td>
+                                                    <td>MTEC010120230045</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Price</td>
+                                                    <td>Rp.9.500.000</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">First Date Received</td>
+                                                    <td>20-01-2023</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Received By</td>
+                                                    <td>Cahyo Pras</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Last Modified</td>
+                                                    <td>05-01-2023 10:01:01</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end">Event</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="border-end"></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <!-- Nav tabs buttom -->
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                <button class="nav-link active" id="nav-detail-tab" data-toggle="tab"
+                                                    data-target="#nav-detail" type="button" role="tab"
+                                                    aria-controls="nav-detail" aria-selected="true">Detail</button>
+                                                <button class="nav-link" id="nav-event-tab" data-toggle="tab"
+                                                    data-target="#nav-event" type="button" role="tab"
+                                                    aria-controls="nav-event" aria-selected="false">Event</button>
+                                                <button class="nav-link" id="nav-image-tab" data-toggle="tab"
+                                                    data-target="#nav-image" type="button" role="tab"
+                                                    aria-controls="nav-image" aria-selected="false">Image</button>
+                                                <button class="nav-link" id="nav-image-tab" data-toggle="tab"
+                                                    data-target="#nav-document" type="button" role="tab"
+                                                    aria-controls="nav-document" aria-selected="false">Document</button>
+                                                <button class="nav-link" id="nav-waranty-tab" data-toggle="tab"
+                                                    data-target="#nav-waranty" type="button" role="tab"
+                                                    aria-controls="nav-waranty" aria-selected="false">Waranty</button>
+                                                <button class="nav-link" id="nav-child-tab" data-toggle="tab"
+                                                    data-target="#nav-child" type="button" role="tab"
+                                                    aria-controls="nav-child" aria-selected="false">Child</button>
+                                                <button class="nav-link" id="nav-maintenance-tab" data-toggle="tab"
+                                                    data-target="#nav-maintenance" type="button" role="tab"
+                                                    aria-controls="nav-maintenance"
+                                                    aria-selected="false">Maintenance</button>
+                                                <button class="nav-link" id="nav-audit-tab" data-toggle="tab"
+                                                    data-target="#nav-audit" type="button" role="tab"
+                                                    aria-controls="nav-audit" aria-selected="false">Audit</button>
+                                                <button class="nav-link" id="nav-history-tab" data-toggle="tab"
+                                                    data-target="#nav-history" type="button" role="tab"
+                                                    aria-controls="nav-hydtory" aria-selected="false">History</button>
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content" id="nav-tabContent">
+                                            <!-- Tab detail -->
+                                            <div class="tab-pane fade show active" id="nav-detail" role="tabpanel"
+                                                aria-labelledby="nav-home-tab">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <div class="create-date-container">
+                                                            <div class="create-date">
+                                                                <p>Create Date</p>
+                                                            </div>
+                                                            <div class="create-date">
+                                                                <p><b>05-02-2023 14:05:01</b></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="create-date-container">
+                                                            <div class="create-date">
+                                                                <p>Create Date</p>
+                                                            </div>
+                                                            <div class="create-date">
+                                                                <p><b>05-02-2023 14:05:01</b></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div>
+                                                            <p>Specification</p>
+                                                        </div>
+                                                        <div>
+                                                            <div class="overflow-auto border">
+                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                                Nulla veritatis quia expedita. Veniam vel suscipit
+                                                                aliquid debitis alias tempore exercitationem totam porro
+                                                                eum delectus? Beatae repellat dolorum incidunt fugiat
+                                                                dolore iste itaque accusantium non cum, sint id. Quis
+                                                                dolorum quidem ducimus harum commodi, ut laudantium vero
+                                                                esse natus qui minima molestias? Quos dolorum beatae
+                                                                pariatur tenetur mollitia delectus obcaecati
+                                                                exercitationem similique culpa, aliquam eveniet nostrum
+                                                                quisquam voluptatem quam optio, autem earum quasi!
+                                                                Dolores quos totam nobis, amet nesciunt tempora
+                                                                laboriosam ullam repellat. Beatae voluptatibus corporis
+                                                                rerum voluptatum porro, tempora dolorum nemo, quisquam
+                                                                veritatis asperiores veniam sint ab excepturi iusto
+                                                                ipsam.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Tab event -->
+                                            <div class="tab-pane fade" id="nav-event" role="tabpanel"
+                                                aria-labelledby="nav-event-tab">
+                                                <table class="table table-bordered">
+                                                    <tbody class="text-center">
+                                                        <tr>
+                                                            <td>Transation</td>
+                                                            <td>Tranfer Type</td>
+                                                            <td>Assigned To</td>
+                                                            <td>Assigned Location To</td>
+                                                            <td>Request Date</td>
+                                                            <td>Start Date</td>
+                                                            <td>End date</td>
+                                                            <td>Approved Date</td>
+                                                            <td>Approved By</td>
+                                                            <td>Action</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Transfer</td>
+                                                            <td>Location</td>
+                                                            <td>-</td>
+                                                            <td>Head Office</td>
+                                                            <td>
+                                                                <div>14-01-2024</div>
+                                                                <div>14:12:11</div>
+                                                            </td>
+                                                            <td>14-01-2024</td>
+                                                            <td>14-01-2024</td>
+                                                            <td>
+                                                                <div>14-01-2024</div>
+                                                                <div>14:12:11</div>
+                                                            </td>
+                                                            <td>Thornton</td>
+                                                            <td>
+                                                                <!-- Button trigger modal -->
+                                                                <button type="button" class="btn" data-toggle="modal"
+                                                                    data-target="#exampleModalCenter">
+                                                                    <img src="assets/img/eye-fill.svg" alt="">
+                                                                </button>
+
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="exampleModalCenter"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="exampleModalCenterTitle"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered"
+                                                                        role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title"
+                                                                                    id="exampleModalLongTitle">Modal
+                                                                                    title</h5>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <table class="table table-bordered">
+                                                                                    <tbody>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">
+                                                                                                Condition</td>
+                                                                                            <td>Good</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">
+                                                                                                Purchase Date</td>
+                                                                                            <td>01-01-2023</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">
+                                                                                                Supplier</td>
+                                                                                            <td>Tecsolin</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">PO
+                                                                                                number</td>
+                                                                                            <td>MTEC010120230045</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Price
+                                                                                            </td>
+                                                                                            <td>Rp.9.500.000</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">First
+                                                                                                Date Received</td>
+                                                                                            <td>20-01-2023</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">
+                                                                                                Received By</td>
+                                                                                            <td>Cahyo Pras</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Last
+                                                                                                Modified</td>
+                                                                                            <td>05-01-2023 10:01:01</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Event
+                                                                                            </td>
+                                                                                            <td>-</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Event
+                                                                                            </td>
+                                                                                            <td>-</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Event
+                                                                                            </td>
+                                                                                            <td>-</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Event
+                                                                                            </td>
+                                                                                            <td>-</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Event
+                                                                                            </td>
+                                                                                            <td>-</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end">Event
+                                                                                            </td>
+                                                                                            <td>-</td>
+                                                                                        </tr>
+                                                                                        <tr class="border-bottom">
+                                                                                            <td class="border-end"></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!-- Tab Image -->
+                                            <div class="tab-pane fade tab-image" id="nav-image" role="tabpanel"
+                                                aria-labelledby="nav-image-tab">
+                                                <div class="w-100">
+                                                    <!-- Button trigger modal -->
+                                                    <div class="d-flex justify-content-end w-100">
+                                                        <button type="button" class="btn btn-primary button-add-modal"
+                                                            data-toggle="modal" data-target="#imageModal">
+                                                            Add Image
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade custom-modal" id="imageModal" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Add
+                                                                        Image
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>Upload File </p>
+                                                                    <div>
+                                                                        <!-- Button trigger modal -->
+                                                                        <div class="input-group mb-3">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Select File"
+                                                                                aria-label="Recipient's username"
+                                                                                aria-describedby="basic-addon2">
+                                                                            <div class="input-group-append">
+                                                                                <button
+                                                                                    class="input-group-text rounded-left-0"
+                                                                                    id="basic-addon2">browser
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex gap-3">
+                                                                            <div class="img-modal d-flex align-items-center justify-content-center">
+                                                                                <img src="assets/img/laptop.svg" alt="">
+                                                                            </div>
+                                                                            <div class="img-modal d-flex align-items-center justify-content-center">
+                                                                                <img src="assets/img/laptop.svg" alt="">
+                                                                            </div>
+                                                                            <div class="img-modal d-flex align-items-center justify-content-center">
+                                                                                <img src="assets/img/laptop.svg" alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary close"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary upload"
+                                                                        id="uploadButton">Upload</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex gap-3">
+                                                    <div
+                                                        class="size-10rem d-flex align-items-center justify-content-center">
+                                                        <img src="assets/img/laptop.svg" alt="no image"
+                                                            class=" img-tab-image">
+                                                    </div>
+                                                    <div
+                                                        class="size-10rem d-flex align-items-center justify-content-center">
+                                                        <img src="assets/img/laptop.svg" alt="no image"
+                                                            class=" img-tab-image">
+                                                    </div>
+                                                    <div
+                                                        class="size-10rem d-flex align-items-center justify-content-center">
+                                                        <img src="assets/img/laptop.svg" alt="no image"
+                                                            class=" img-tab-image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Tab Document -->
+                                            <div class="tab-pane fade tab" id="nav-document" role="tabpanel"
+                                                aria-labelledby="nav-document-tab">
+                                                <div class="w-100">
+                                                    <!-- Button trigger modal -->
+                                                    <div class="d-flex justify-content-end w-100">
+                                                        <button type="button" class="btn btn-primary button-add-modal"
+                                                            data-toggle="modal" data-target="#documentModal">
+                                                            Add Document
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade custom-modal" id="documentModal" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Add
+                                                                        Document
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Upload File
+                                                                    <div>
+                                                                        <div class="input-group mb-3">
+                                                                            <input type="text" class="form-control">
+                                                                            <div class="input-group-append">
+                                                                                <button
+                                                                                    class="input-group-text rounded-left-0"
+                                                                                    id="basic-addon2">Browse
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p><b>No Selected File</b></p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary close"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary upload"
+                                                                        id="uploadButton">Upload</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-3">
+                                                    <table class="table table-bordered">
+                                                        <thead class="text-center">
+                                                            <tr>
+                                                                <th scope="col">Doc Name</th>
+                                                                <th scope="col">Upload Date</th>
+                                                                <th scope="col">Uploud By</th>
+                                                                <th scope="col">File Name</th>
+                                                                <th scope="col">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="text-center">
+                                                            <tr>
+                                                                <td>User Manual</td>
+                                                                <td>01-01-2023 14:14:14</td>
+                                                                <td>Cristiano Rojali</td>
+                                                                <td>jepang.pdf</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-download">Download</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-delete">Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>User Manual</td>
+                                                                <td>01-01-2023 14:14:14</td>
+                                                                <td>Cristiano Rojali</td>
+                                                                <td>jepang.pdf</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-download">Download</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-delete">Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>User Manual</td>
+                                                                <td>01-01-2023 14:14:14</td>
+                                                                <td>Cristiano Rojali</td>
+                                                                <td>jepang.pdf</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-download">Download</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-delete">Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>User Manual</td>
+                                                                <td>01-01-2023 14:14:14</td>
+                                                                <td>Cristiano Rojali</td>
+                                                                <td>jepang.pdf</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-download">Download</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-delete">Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>User Manual</td>
+                                                                <td>01-01-2023 14:14:14</td>
+                                                                <td>Cristiano Rojali</td>
+                                                                <td>jepang.pdf</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-download">Download</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-delete">Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- Tab Waranty -->
+                                            <div class="tab-pane fade tab" id="nav-waranty" role="tabpanel"
+                                                aria-labelledby="nav-waranty-tab">
+                                                <div class="w-100">
+                                                    <!-- Button trigger modal -->
+                                                    <div class="d-flex justify-content-end w-100">
+                                                        <button type="button" class="btn btn-primary button-add-modal"
+                                                            data-toggle="modal" data-target="#warantyModal">
+                                                            Add Waranty
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade custom-modal" id="warantyModal" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Add
+                                                                        Image
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Duration
+                                                                    <div>
+                                                                        <!-- Button trigger modal -->
+                                                                        <div class="input-group mb-3">
+                                                                            <input type="text" class="form-control">
+                                                                            <div class="input-group-append">
+                                                                                <button
+                                                                                    class="input-group-text rounded-left-0"
+                                                                                    id="basic-addon2">Month
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    Expired Date
+                                                                    <input type="date" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                                    Notes
+                                                                    <input type="date" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary close"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary upload"
+                                                                        id="uploadButton">Upload</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-3">
+                                                    <table class="table table-bordered">
+                                                        <thead class="text-center">
+                                                            <tr>
+                                                                <th scope="col">Duration</th>
+                                                                <th scope="col">Expired Date</th>
+                                                                <th scope="col">Active</th>
+                                                                <th scope="col">Created By</th>
+                                                                <th scope="col">Notes</th>
+                                                                <th scope="col">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="text-center">
+                                                            <tr>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>
+                                                                    <img src="assets/img/check-lg.svg" alt="">
+                                                                </td>
+                                                                <td>Otto</td>
+                                                                <td>Otto</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-edit">Edit</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Jacob</td>
+                                                                <td>Thornton</td>
+                                                                <td>
+                                                                    <img src="assets/img/check-lg.svg" alt="">
+                                                                </td>
+                                                                <td>Otto</td>
+                                                                <td>Otto</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-edit">Edit</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Larry the Bird</td>
+                                                                <td>@twitter</td>
+                                                                <td>
+                                                                    <img src="assets/img/check-lg.svg" alt="">
+                                                                </td>
+                                                                <td>Otto</td>
+                                                                <td>Otto</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-edit">Edit</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Larry the Bird</td>
+                                                                <td>@twitter</td>
+                                                                <td>
+                                                                    <img src="assets/img/check-lg.svg" alt="">
+                                                                </td>
+                                                                <td>Otto</td>
+                                                                <td>Otto</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-edit">Edit</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Larry the Bird</td>
+                                                                <td>@twitter</td>
+                                                                <td>
+                                                                    <img src="assets/img/check-lg.svg" alt="">
+                                                                </td>
+                                                                <td>Otto</td>
+                                                                <td>Otto</td>
+                                                                <td class="text-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-edit">Edit</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- tab Child -->
+                                            <div class="tab-pane fade tab" id="nav-child" role="tabpanel"
+                                                aria-labelledby="nav-child-tab">
+                                                <div class="w-100">
+                                                    <!-- Button trigger modal -->
+                                                    <div class="d-flex justify-content-end w-100">
+                                                        <button type="button" class="btn btn-primary button-add-modal"
+                                                            data-toggle="modal" data-target="#childModal">
+                                                            Add child
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade custom-modal modal-xl" id="childModal" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Add
+                                                                        Child Asset
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <table id="datatablesSimple">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Company</th>
+                                                                                <th>Asset ID</th>
+                                                                                <th>Category</th>
+                                                                                <th>Asset Name</th>
+                                                                                <th>Position</th>
+                                                                                <th>Status</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Momointec Indonesia</td>
+                                                                                <td>43985673974</td>
+                                                                                <td>Laptop</td>
+                                                                                <td>Notebook A</td>
+                                                                                <td>Head Office</td>
+                                                                                <td>Available</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary close"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary upload"
+                                                                        id="uploadButton">Upload</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt-3">
+                                                        <table class="table table-bordered">
+                                                            <thead class="text-center">
+                                                                <tr>
+                                                                    <th scope="col"></th>
+                                                                    <th scope="col">Relation</th>
+                                                                    <th scope="col">Asset Name</th>
+                                                                    <th scope="col">Asset ID</th>
+                                                                    <th scope="col">License Number</th>
+                                                                    <th scope="col">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="text-center">
+                                                                <tr>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td class="text-center">
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-download">Unlink</button>
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-delete">View</button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Jacob</td>
+                                                                    <td>Thornton</td>
+                                                                    <td>@fat</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td class="text-center">
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-download">Unlink</button>
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-delete">View</button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Larry the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td class="text-center">
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-download">Unlink</button>
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-delete">View</button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Larry the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td class="text-center">
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-download">Unlink</button>
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-delete">View</button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Larry the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td class="text-center">
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-download">Unlink</button>
+                                                                        <button type="button"
+                                                                            class="btn btn-primary btn-delete">View</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- tab Maintanance -->
+                                            <div class="tab-pane fade tab" id="nav-maintenance" role="tabpanel"
+                                                aria-labelledby="nav-maintenance-tab">
+                                                <div class="w-100">
+                                                    <!-- Button trigger modal -->
+                                                    <div class="d-flex justify-content-end w-100">
+                                                        <button type="button" class="btn btn-primary button-add-modal"
+                                                            data-toggle="modal" data-target="#maintenanceModal">
+                                                            Add Maintanance
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade custom-modal" id="maintenanceModal"
+                                                        tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Add
+                                                                        Maintanance
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Name Maintanance<span class="red-star">*</span>
+                                                                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                    Maintanance Category<span class="red-star">*</span>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                        <div class="input-group-append">
+                                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="#">Another action</a>
+                                                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                                                <div role="separator" class="dropdown-divider"></div>
+                                                                                <a class="dropdown-item" href="#">Separated link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    Deskripsi Maintanance<span class="red-star">*</span>
+                                                                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                    Maintenance Date<span class="red-star">*</span>
+                                                                    <input type="date" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                    Maintenance By
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                        <div class="input-group-append">
+                                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="#">Another action</a>
+                                                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                                                <div role="separator" class="dropdown-divider"></div>
+                                                                                <a class="dropdown-item" href="#">Separated link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    Maintenance Status
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                        <div class="input-group-append">
+                                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="#">Another action</a>
+                                                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                                                <div role="separator" class="dropdown-divider"></div>
+                                                                                <a class="dropdown-item" href="#">Separated link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    Date Completed<span class="red-star">*</span>
+                                                                    <input type="date" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                    Service Category<span class="red-star">*</span>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                        <div class="input-group-append">
+                                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="#">Another action</a>
+                                                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                                                <div role="separator" class="dropdown-divider"></div>
+                                                                                <a class="dropdown-item" href="#">Separated link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    Service Category
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                        <div class="input-group-append">
+                                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="#">Another action</a>
+                                                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                                                <div role="separator" class="dropdown-divider"></div>
+                                                                                <a class="dropdown-item" href="#">Separated link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    Service Category
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                                                                        <div class="input-group-append">
+                                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                            </button>
+                                                                            <div class="dropdown-menu">
+                                                                                <a class="dropdown-item" href="#">Another action</a>
+                                                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                                                <div role="separator" class="dropdown-divider"></div>
+                                                                                <a class="dropdown-item" href="#">Separated link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary close"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary upload"
+                                                                        id="uploadButton">Upload</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt-3">
+                                                        <table class="table table-bordered">
+                                                            <thead class="text-center">
+                                                                <tr>
+                                                                    <th scope="col">Schedule Date</th>
+                                                                    <th scope="col">Maintanance Name</th>
+                                                                    <th scope="col">Request By</th>
+                                                                    <th scope="col">Request/Date</th>
+                                                                    <th scope="col">Maintanance By</th>
+                                                                    <th scope="col">Status</th>
+                                                                    <th scope="col">Complation Date</th>
+                                                                    <th scope="col">Maintanance Date</th>
+                                                                    <th scope="col">Description</th>
+                                                                    <th scope="col">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="text-center">
+                                                                <tr>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td
+                                                                        class="text-center d-flex justify-content-center gap-3">
+                                                                        <div>
+                                                                            <img src="assets/img/pencil-square.svg"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div>
+                                                                            <img src="assets/img/eye-fill.svg" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td
+                                                                        class="text-center d-flex justify-content-center gap-3">
+                                                                        <div>
+                                                                            <img src="assets/img/pencil-square.svg"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div>
+                                                                            <img src="assets/img/eye-fill.svg" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td
+                                                                        class="text-center d-flex justify-content-center gap-3">
+                                                                        <div>
+                                                                            <img src="assets/img/pencil-square.svg"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div>
+                                                                            <img src="assets/img/eye-fill.svg" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td
+                                                                        class="text-center d-flex justify-content-center gap-3">
+                                                                        <div>
+                                                                            <img src="assets/img/pencil-square.svg"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div>
+                                                                            <img src="assets/img/eye-fill.svg" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td
+                                                                        class="text-center d-flex justify-content-center gap-3">
+                                                                        <div>
+                                                                            <img src="assets/img/pencil-square.svg"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div>
+                                                                            <img src="assets/img/eye-fill.svg" alt="">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- tab Audit -->
+                                            <div class="tab-pane fade tab" id="nav-audit" role="tabpanel"
+                                                aria-labelledby="nav-audit-tab">
+                                                <div class="w-100">
+                                                    <!-- Button trigger modal -->
+                                                    <div class="d-flex justify-content-end w-100">
+                                                        <button type="button" class="btn btn-primary button-add-modal"
+                                                            data-toggle="modal" data-target="#auditModal">
+                                                            Add Audit
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade custom-modal" id="auditModal" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Add
+                                                                        Audit
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <table class="table table-bordered table-no-border">
+                                                                        <tbody nc>
+                                                                            <tr>
+                                                                                <td>Name</td>
+                                                                                <td>: Cleansing</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Location</td>
+                                                                                <td>: Head Office</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Position</td>
+                                                                                <td>: HO Laptop Storage</td>
+                                                                            </tr>
+                                                                                <td>Date Audit</td>
+                                                                                <td>: 01-04-43</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Audit By</td>
+                                                                                <td>: Cahyo</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Condition</td>
+                                                                                <td>: Good</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    Attachment
+                                                                                </td>
+                                                                                <td>
+                                                                                    :<img src="assets/img/laptop.svg" alt="">
+                                                                                    <img src="assets/img/laptop.svg" alt=""> 
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Note</td>
+                                                                                <td>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius obcaecati mollitia quo a enim!</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt-3">
+                                                        <table class="table table-bordered">
+                                                            <thead class="text-center">
+                                                                <tr>
+                                                                    <th scope="col">Name</th>
+                                                                    <th scope="col">Condition</th>
+                                                                    <th scope="col">Audit By</th>
+                                                                    <th scope="col">Date</th>
+                                                                    <th scope="col">Location</th>
+                                                                    <th scope="col">Position</th>
+                                                                    <th scope="col">Note</th>
+                                                                    <th scope="col">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="text-center">
+                                                                <tr>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>
+                                                                        <img src="assets/img/info-circle-fill.svg"
+                                                                            alt="">
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <img src="assets/img/eye-fill.svg" alt="">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Jacob</td>
+                                                                    <td>Thornton</td>
+                                                                    <td>@fat</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>
+                                                                        <img src="assets/img/info-circle-fill.svg"
+                                                                            alt="">
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <img src="assets/img/eye-fill.svg" alt="">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Larry the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>
+                                                                        <img src="assets/img/info-circle-fill.svg"
+                                                                            alt="">
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <img src="assets/img/eye-fill.svg" alt="">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Larry the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>
+                                                                        <img src="assets/img/info-circle-fill.svg"
+                                                                            alt="">
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <img src="assets/img/eye-fill.svg" alt="">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Larry the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>@twitter</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>Otto</td>
+                                                                    <td>
+                                                                        <img src="assets/img/info-circle-fill.svg"
+                                                                            alt="">
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <img src="assets/img/eye-fill.svg" alt="">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- tab history -->
+                                            <div class="tab-pane fade tab" id="nav-history" role="tabpanel"
+                                                aria-labelledby="nav-history-tab">
+                                                <div class="w-100">
+                                                    <div class="pt-3">
+                                                        <table class="table table-bordered">
+                                                            <thead class="text-center">
+                                                                <tr>
+                                                                    <th scope="col">Date</th>
+                                                                    <th scope="col">Event</th>
+                                                                    <th scope="col">Field</th>
+                                                                    <th scope="col">Canged Form</th>
+                                                                    <th scope="col">Canged To</th>
+                                                                    <th scope="col">Action By</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="text-center">
+                                                                <tr>
+                                                                    <td class="text-center">
+                                                                        <div>10-10-2019</div>
+                                                                        <div>10:10:10</div>
+                                                                    </td>
+                                                                    <td>Maintanance</td>
+                                                                    <td>Status</td>
+                                                                    <td>Transfer</td>
+                                                                    <td>In Progress</td>
+                                                                    <td>Cahyo Pras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">
+                                                                        <div>10-10-2019</div>
+                                                                        <div>10:10:10</div>
+                                                                    </td>
+                                                                    <td>Maintanance</td>
+                                                                    <td>Status</td>
+                                                                    <td>Transfer</td>
+                                                                    <td>In Progress</td>
+                                                                    <td>Cahyo Pras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">
+                                                                        <div>10-10-2019</div>
+                                                                        <div>10:10:10</div>
+                                                                    </td>
+                                                                    <td>Maintanance</td>
+                                                                    <td>Status</td>
+                                                                    <td>Transfer</td>
+                                                                    <td>In Progress</td>
+                                                                    <td>Cahyo Pras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">
+                                                                        <div>10-10-2019</div>
+                                                                        <div>10:10:10</div>
+                                                                    </td>
+                                                                    <td>Maintanance</td>
+                                                                    <td>Status</td>
+                                                                    <td>Transfer</td>
+                                                                    <td>In Progress</td>
+                                                                    <td>Cahyo Pras</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">
+                                                                        <div>10-10-2019</div>
+                                                                        <div>10:10:10</div>
+                                                                    </td>
+                                                                    <td>Maintanance</td>
+                                                                    <td>Status</td>
+                                                                    <td>Transfer</td>
+                                                                    <td>In Progress</td>
+                                                                    <td>Cahyo Pras</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+    </main>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- SweetAlert2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
